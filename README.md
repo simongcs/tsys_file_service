@@ -23,12 +23,17 @@ This project is a simple FastAPI application that provides endpoints for uploadi
 
 ## Running the Application
 
-1. Start the docker containers:
+1. Copy env file:
+    ```bash
+    cp .env.example .env
+    ```
+
+2. Start the docker containers:
     ```bash
     docker compose up -d --build
     ```
 
-2. The API will be available at `http://localhost:8000`.
+3. The API will be available at `http://localhost:8000`.
 
 ## Endpoints
 
