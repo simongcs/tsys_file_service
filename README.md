@@ -19,35 +19,13 @@ This project is a simple FastAPI application that provides endpoints for uploadi
 - pytest (for testing)
 - httpx (for testing)
 
-## Installation
 
-1. Clone the repository:
-    ```bash
-    git clone <repository_url>
-    cd <repository_folder>
-    ```
-
-2. Create a virtual environment and activate it:
-    ```bash
-    python -m venv venv
-    source venv/bin/activate  # On Windows use `venv\\Scripts\\activate`
-    ```
-
-3. Install the required packages:
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-4. Copy the .env.example file to .env and setup your variables:
-    ```
-    cp .env.example .env
-    ```
 
 ## Running the Application
 
-1. Start the FastAPI server:
+1. Start the docker containers:
     ```bash
-    uvicorn app.main:app --host localhost --port 8000 --reload
+    docker compose up -d --build
     ```
 
 2. The API will be available at `http://localhost:8000`.
