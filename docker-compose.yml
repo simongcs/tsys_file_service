@@ -1,0 +1,26 @@
+version: "3.7"
+
+services:
+  s3_proxy:
+    build:
+      context: .
+      dockerfile: app/Dockerfile
+    container_name: s3_proxy
+    ports:
+      - "8000:8000"
+    environment:
+      - AWS_ACCESS_KEY_ID=test
+      - AWS_SECRET_ACCESS_KEY=test
+      - AWS_DEFAULT_REGION=us-east-1
+    depends_on:
+      - localstack
+
+  localstack:
+    image: localstack/localstack
+    container_name: localstack
+    environment:
+      - SERVICES=s3
+      - DEBUG=1
+    ports:
+      - "4566:4566"
+      - "4571:4571"
